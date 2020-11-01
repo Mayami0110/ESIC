@@ -11,9 +11,9 @@ public class LoginPage extends BasePage {
 
 	util utilobj = new util();
 	ReadDataFile readdata = new ReadDataFile();
-	private By emailid = By.id("username");
-	private By password = By.id("password");
-	private By loginbtn = By.id("loginBtn");
+	private By username = By.id("IDToken1");
+	private By password = By.id("IDToken2");
+	private By loginbtn = By.xpath("//*[@id=\"wraper\"]/table/tbody/tr/td[2]/table[1]/tbody/tr[4]/td/table/tbody/tr/td[1]/div/input");
 
 	
 	public LoginPage(WebDriver driver) {
@@ -22,20 +22,22 @@ public class LoginPage extends BasePage {
 	}
 
 	/**
-	 * @return the emailid
+	 * @return the username
 	 */
-	public WebElement getEmailid() {
+	public WebElement getUsername() {
 		
 		String ui = readdata.readDataFile("LoginPage", 1, "uidd", "LoginPage");
 		//String pw = readdata.readDataFile("LoginPageTest", 1, "pwdd", "doLoginTest");
 		
-		return getElement(emailid);
+		return getElement(username);
 	}
 
 	/**
 	 * @return the password
 	 */
 	public WebElement getPassword() {
+		
+		
 		return getElement(password);	}
 
 	/**
@@ -48,7 +50,7 @@ public class LoginPage extends BasePage {
 
 	public HomePage doLogin(String uid, String pwd)
 	{
-		getEmailid().sendKeys(uid);
+		getUsername().sendKeys(uid);
 		getPassword().sendKeys(pwd);
 		
 		utilobj.JSClick(loginbtn, driver);
