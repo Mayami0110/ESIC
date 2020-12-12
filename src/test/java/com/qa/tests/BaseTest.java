@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import com.qa.pages.BasePage;
 import com.qa.pages.Page;
@@ -44,7 +45,7 @@ public class BaseTest {
 		}
 	}
 
-	@BeforeMethod
+	@BeforeTest
 	public void setuptest() {
 
 		if (prop.getProperty("browser").equals("chrome")) {

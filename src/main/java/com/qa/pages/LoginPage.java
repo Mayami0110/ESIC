@@ -26,7 +26,7 @@ public class LoginPage extends BasePage {
 	 */
 	public WebElement getUsername() {
 		
-		String ui = readdata.readDataFile("LoginPage", 1, "uidd", "LoginPage");
+		//String ui = readdata.readDataFile("LoginPage", 1, "uidd", "LoginPage");
 		//String pw = readdata.readDataFile("LoginPageTest", 1, "pwdd", "doLoginTest");
 		
 		return getElement(username);
@@ -53,11 +53,11 @@ public class LoginPage extends BasePage {
 		getUsername().sendKeys(uid);
 		getPassword().sendKeys(pwd);
 		
-		utilobj.JSClick(loginbtn, driver);
+		utilobj.JSClick(getLoginbtn(), driver);
 		
 		//getLoginbtn().click();
 		
-		return new HomePage();
+		return new HomePage(driver);
 		
 	}
 	
