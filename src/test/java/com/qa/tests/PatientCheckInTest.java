@@ -1,5 +1,6 @@
 package com.qa.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.pages.HISHomePage;
@@ -45,9 +46,19 @@ public class PatientCheckInTest  extends BaseTest{
 	}
 	
 	@Test(priority =4)
-	public void doNavigateToPatientCheckInTest() {
+	public void verifyPatientCheckInPageTitleTest() {
 
-		 patientcheckInpage.verifyPatientCheckInPageTitle();
+		String PatientCheckInTitle= patientcheckInpage.verifyPatientCheckInPageTitle();
+		Assert.assertEquals(PatientCheckInTitle, prop.getProperty("patientcheckintitle"),"PatientCheckInTitle is Not matching");
 	}
+	
+	@Test(priority =5)
+	public void doPatientCheckINTest() {
+
+		patientcheckInpage.doPatientCheckIN(prop.getProperty("IPNumber"),prop.getProperty("specialisationName"));
+		
+	}
+	
+	
 	
 }

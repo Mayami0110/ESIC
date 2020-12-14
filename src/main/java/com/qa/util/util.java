@@ -28,6 +28,19 @@ public class util {
 	
 	}
 	
+	public void ActionClick(WebElement element,WebDriver driver)
+	{
+		
+		Actions act = new Actions(driver);
+	
+		//act.moveToElement(element).pause(1000).click().build().perform();
+
+		//act.moveToElement(element).click().build().perform();
+		
+		act.click(element).perform();
+	
+	}
+	
 	public void rightClick(WebDriver driver, By locator) {
 
 		element = driver.findElement(locator);
@@ -91,7 +104,7 @@ public class util {
 	{
 		try
 		{
-			waitForElement(strElement);
+			//waitForElement(strElement);
 			
 			System.out.println(strElement.getText());
 			
@@ -111,7 +124,7 @@ public class util {
 
 	}
 	
-	public void waitForElement(WebElement strElement)
+	/*public void waitForElement(WebElement strElement)
 	{
 		try
 		{
@@ -130,6 +143,6 @@ public class util {
 			//logger("Steps","waitForElement", e);
 
 		}
-	}
+	}*/
 	
 }

@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="25439" started-at="2020-12-12T13:26:43Z" finished-at="2020-12-12T13:27:09Z">
+  <suite name="Suite" duration-ms="54428" started-at="2020-12-13T14:50:17Z" finished-at="2020-12-13T14:51:11Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="25439" started-at="2020-12-12T13:26:43Z" finished-at="2020-12-12T13:27:09Z">
+    <test name="Test" duration-ms="54428" started-at="2020-12-13T14:50:17Z" finished-at="2020-12-13T14:51:11Z">
       <class name="com.qa.tests.PatientCheckInTest">
-        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="setuptest" is-config="true" duration-ms="11943" started-at="2020-12-12T13:26:43Z" finished-at="2020-12-12T13:26:55Z">
+        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="setuptest" is-config="true" duration-ms="12621" started-at="2020-12-13T14:50:17Z" finished-at="2020-12-13T14:50:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setuptest -->
-        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doLoginTest" duration-ms="1546" started-at="2020-12-12T13:26:55Z" finished-at="2020-12-12T13:26:57Z">
+        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doLoginTest" duration-ms="193" started-at="2020-12-13T14:50:29Z" finished-at="2020-12-13T14:50:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLoginTest -->
-        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="2796" started-at="2020-12-12T13:26:57Z" finished-at="2020-12-12T13:27:00Z">
+        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="3692" started-at="2020-12-13T14:50:30Z" finished-at="2020-12-13T14:50:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToSelectHospitalLocationTest -->
-        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="7836" started-at="2020-12-12T13:27:00Z" finished-at="2020-12-12T13:27:08Z">
+        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="4623" started-at="2020-12-13T14:50:33Z" finished-at="2020-12-13T14:50:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToHISHomeTest -->
-        <test-method status="PASS" signature="doNavigateToPatientCheckInTest()[pri:3, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToPatientCheckInTest" duration-ms="1293" started-at="2020-12-12T13:27:08Z" finished-at="2020-12-12T13:27:09Z">
+        <test-method status="PASS" signature="doNavigateToPatientCheckInTest()[pri:3, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToPatientCheckInTest" duration-ms="1618" started-at="2020-12-13T14:50:38Z" finished-at="2020-12-13T14:50:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToPatientCheckInTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="teardown" is-config="true" duration-ms="1" started-at="2020-12-12T13:27:09Z" finished-at="2020-12-12T13:27:09Z">
+        <test-method status="PASS" signature="verifyPatientCheckInPageTitleTest()[pri:4, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="verifyPatientCheckInPageTitleTest" duration-ms="17" started-at="2020-12-13T14:50:40Z" finished-at="2020-12-13T14:50:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPatientCheckInPageTitleTest -->
+        <test-method status="PASS" signature="doPatientCheckINTest()[pri:5, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doPatientCheckINTest" duration-ms="31646" started-at="2020-12-13T14:50:40Z" finished-at="2020-12-13T14:51:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doPatientCheckINTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="teardown" is-config="true" duration-ms="1" started-at="2020-12-13T14:51:11Z" finished-at="2020-12-13T14:51:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
