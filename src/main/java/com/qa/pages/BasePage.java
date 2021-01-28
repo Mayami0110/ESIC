@@ -1,5 +1,7 @@
 package com.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +15,6 @@ public class BasePage extends Page {
 
 	}
 
-	@Override
 	public WebElement getElement(By locator) {
 
 		WebElement element = null;
@@ -30,6 +31,8 @@ public class BasePage extends Page {
 		}
 		return element;
 	}
+	
+	
 
 	public WebElement getElement(By locator, String elementdata) {
 
@@ -98,6 +101,9 @@ public class BasePage extends Page {
 		}
 
 	}
+	
+	
+
 
 
 }

@@ -4,15 +4,20 @@
   <listeners>
     <listener class-name="com.qa.util.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="com.qa.tests.PatientCheckInTest">
+      <class name="com.qa.tests.DoctorWorklistTest">
         <methods>
-          <include name="verifyPatientCheckInPageTitleTest"/>
+          <include name="doNavigateToSelectHospitalLocationTest"/>
+          <include name="doCasesheetprecripstionTest"/>
+          <include name="doNavigateToHISHomeTest"/>
+          <include name="doPatientCheckINTest"/>
           <include name="teardown"/>
           <include name="setuptest"/>
+          <include name="doNavigateToPatientCheckInTest"/>
+          <include name="doNavigateToDoctorWorklistTest"/>
         </methods>
-      </class> <!-- com.qa.tests.PatientCheckInTest -->
+      </class> <!-- com.qa.tests.DoctorWorklistTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

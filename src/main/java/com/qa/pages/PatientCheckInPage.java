@@ -6,26 +6,26 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.util.util;
 
-public class PatientCheckInPage extends BasePage {
+ public class PatientCheckInPage extends BasePage {
 	util utilobj = new util();
 
 	public PatientCheckInPage(WebDriver driver) {
 		super(driver);
 
 	}
-	
+
 	private By txtIPNO = By.id("ctl00_cphpage_txtIPNO");
 
-	//Livelist Control
-	
+	// Livelist Control
+
 	private By lnkbtnIPNo = By.id("ctl00_cphpage_lnkbtnIPNo");
-	
+
 	private By hisLiveListControlchkUHID = By.id("ctl00_cphpage_hisLiveListControl_gdvInsurance_ctl02_chkUHID");
-	
+
 	private By hisLiveListControlbtnSelect = By.id("ctl00_cphpage_hisLiveListControl_btnSelect");
-	
-	//Checkin page
-	
+
+	// Checkin page
+
 	private By btnOK = By.id("ctl00_cphpage_btnOK");
 
 	private By btnSaveDisplay = By.id("ctl00_cphpage_btnSaveDisplay");
@@ -33,18 +33,15 @@ public class PatientCheckInPage extends BasePage {
 	private By btncancel = By.id("popup_cancel");
 
 	private By popupmessage = By.id("popup_message");
-	
+
 	private By ddlSpecialisation = By.id("ctl00_cphpage_ddlSpecialisation");
 
-
-	
 	/**
 	 * @return the ddlSpecialisation
 	 */
 	public WebElement getDdlSpecialisation() {
 		return getElement(ddlSpecialisation);
 	}
-
 
 	public WebElement getTxtIPNO() {
 		return getElement(txtIPNO);
@@ -84,49 +81,58 @@ public class PatientCheckInPage extends BasePage {
 		return driver.getTitle();
 
 	}
-	
-	public void doPatientCheckIN(String IPNumber , String SpecialisationName) {
+
+	public void doPatientCheckIN(String IPNumber, String SpecialisationName) {
 
 		try {
-			
+
 			getTxtIPNO().sendKeys(IPNumber);
 			getLnkbtnIPNo().click();
-			//Thread.sleep(2000);
+			// Thread.sleep(2000);
 			getHisLiveListControlchkUHID().click();
 			getHisLiveListControlbtnSelect().click();
 			Thread.sleep(3000);
-			
-			getBtnSaveDisplay().isEnabled();	
-				
-			utilobj.selectDropdown(getDdlSpecialisation(), driver, SpecialisationName);
-			
-		//	driver.switchTo().defaultContent();
 
-			//utilobj.JSClick(getBtnOK(), driver);
-			
+			getBtnSaveDisplay().isEnabled();
+
+			utilobj.selectDropdown(getDdlSpecialisation(), driver, SpecialisationName);
+
+			// driver.switchTo().defaultContent();
+
+			// utilobj.JSClick(getBtnOK(), driver);
+
 			utilobj.ActionClick(getBtnOK(), driver);
-			
-			getBtnSaveDisplay().isEnabled();	
+
+			getBtnSaveDisplay().isEnabled();
 			Thread.sleep(2000);
 
-			//getBtnOK().click();
+			// getBtnOK().click();
 			utilobj.ActionClick(getBtnSaveDisplay(), driver);
-			//utilobj.JSClick(getBtnSaveDisplay(), driver);
+			// utilobj.JSClick(getBtnSaveDisplay(), driver);
 
-		//	getBtnSaveDisplay().click();
+			// getBtnSaveDisplay().click();
 			Thread.sleep(2000);
 			System.out.println(getPopupmessage().getText());
-			getBtncancel().click();
-	
-					
-			
-	}
-		
-		catch(Exception ex) {
+			System.out.println(utilobj.GetCheckinNumberText(getPopupmessage(), driver));
+			// getBtncancel().click();
+
+		}
+
+		catch (Exception ex) {
 			System.err.println(ex);
 		}
 
 	}
-	
+
+	public String getPatientCheckinNumber() {
+
+		System.out.println(getPopupmessage().getText());
+		System.out.println(utilobj.GetCheckinNumberText(getPopupmessage(), driver));
+
+		String strCheckinNumber = utilobj.GetCheckinNumberText(getPopupmessage(), driver);
+
+		getBtncancel().click();
+		return strCheckinNumber;
+	}
 
 }
