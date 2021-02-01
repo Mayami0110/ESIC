@@ -1,5 +1,6 @@
 package com.qa.pages;
 
+
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -27,13 +28,31 @@ public class BasePage extends Page {
 		}
 
 		catch (Exception ex) {
-
+			System.out.println("Wrong locator");
 		}
 		return element;
 	}
-	
-	
 
+	
+	public List<WebElement> getElements(By locator) {
+
+		List<WebElement> element = null;
+		try {
+
+			//waitForElementExplicitClick(locator);
+
+			element = driver.findElements(locator);
+
+		}
+
+		catch (Exception ex) {
+			System.out.println("Wrong locator");
+		}
+		return element;
+	}
+
+	
+	
 	public WebElement getElement(By locator, String elementdata) {
 
 		WebElement element = null;
@@ -49,7 +68,6 @@ public class BasePage extends Page {
 		return element;
 	}
 
-	@Override
 	public void waitForElement(By locator) {
 		try {
 			// WebElement element = null;
@@ -69,11 +87,12 @@ public class BasePage extends Page {
 		}
 
 	}
+
 	public void waitForElementExplicit(By locator) {
 		try {
 			// WebElement element = null;
 
-			WebDriverWait wait = new WebDriverWait(driver,30);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		}
 
@@ -85,11 +104,12 @@ public class BasePage extends Page {
 		}
 
 	}
+
 	public void waitForElementExplicitClick(By locator) {
 		try {
 			// WebElement element = null;
 
-			WebDriverWait wait = new WebDriverWait(driver,30);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.elementToBeClickable(locator));
 		}
 
@@ -101,9 +121,5 @@ public class BasePage extends Page {
 		}
 
 	}
-	
-	
-
-
 
 }

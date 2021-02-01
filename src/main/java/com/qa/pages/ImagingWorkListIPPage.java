@@ -6,25 +6,21 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.util.util;
 
-public class ImagingWorkListOPPage extends BasePage {
+public class ImagingWorkListIPPage extends BasePage {
 	util utilobj = new util();
 
-	public ImagingWorkListOPPage(WebDriver driver) {
+	public ImagingWorkListIPPage(WebDriver driver) {
 
 		super(driver);
 
 	}
-
-	//// *[@id="ctl00_cphpage_gdvOPWorklist"]/tbody/tr/td[3][text()='25-Jan-2021
-	//// 01:37:46 PM']
-	//// *[@id="ctl00_cphpage_gdvOPWorklist"]/tbody/tr[5]/td[1]/a
-	String parent6 = "";
-	String parent8 = "";
+	String parent10 = "";
+	String parent12 = "";
 	private By linkReqNo = By.xpath("//*[@id=\"ctl00_cphpage_gdvOPWorklist\"]/tbody/tr[5]/td[1]/a");
 	private By linkReqNocount = By.xpath("//*[@id=\"ctl00_cphpage_gdvOPWorklist\"]/tbody/tr/td[1]/a");
 
 	String linkreq = null;
-	String linkreq1 = "//*[@id=\\\"ctl00_cphpage_gdvIPWorklist\\\"]//tbody/tr[";
+	String linkreq1 = "//*[@id=\"ctl00_cphpage_gdvOPWorklist\"]//tbody/tr[";
 	String linkreq2 = "]/td[1]/a";
 	int recordcount = 0;
 
@@ -33,7 +29,7 @@ public class ImagingWorkListOPPage extends BasePage {
 	private By chkTestPerformed = By.id("gdvTOItems_ctl02_chkTestPerformed");
 	private By imgReportEntry = By.id("gdvTOItems_ctl02_imgReportEntry");
 	private By imgReportDispatch = By.id("gdvTOItems_ctl02_imgReportDispatch");
-//MyMessageBoxInfo_ButtonNo
+	//MyMessageBoxInfo_ButtonNo
 	private By ButtonOK = By.id("MyMessageBoxInfo_ButtonOK");
 	private By ButtonNo = By.id("MyMessageBoxInfo_ButtonNo");
 	// gdvSearchResult_ctl02_chkDoctor
@@ -46,6 +42,7 @@ public class ImagingWorkListOPPage extends BasePage {
 	private By txtDispatachedTo = By.id("txtDispatachedTo"); // btnSaveDisplay
 	private By btnSaveDisplay = By.id("btnSaveDisplay"); //
 
+	private By imgInPatient = By.id("ctl00_cphpage_imgInPatient"); //
 
 	
 	
@@ -53,6 +50,9 @@ public class ImagingWorkListOPPage extends BasePage {
 	/*
 	 * public WebElement getlinkReqNocount() { return getElement(linkReqNocount); }
 	 */
+	public WebElement getimgInPatient() {
+		return getElement(imgInPatient);
+	}
 	public WebElement getlinkReqNo() {
 		return getElement(linkReqNo);
 	}
@@ -127,36 +127,32 @@ public class ImagingWorkListOPPage extends BasePage {
 
 	}
 
-	public void doImagingWorklistOPFlow(String reqPageTitle) {
+		public void doImagingWorklistIPFlow(String reqPageTitle) {
 
 		try {
 
-			String parent3 = driver.getWindowHandle();
+			getimgInPatient().click();
+			
+			String parent4 = driver.getWindowHandle();
 
 			utilobj.Window(driver);
-			// getlinkReqNo().click();
+
 			utilobj.JSClick(getlinkReqNodynamic(), driver);
 
 			Thread.sleep(3000);
 
 			utilobj.ChildWindow(driver);
 
-			// utilobj.SwitchToChildWindow(driver,reqPageTitle);
-
 			System.out.println(driver.getTitle());
-
-			// getchkPatientArrive().click();
-
-			// utilobj.JSClick(getchkPatientArrive(), driver);
 
 		}
 
 		catch (Exception ex) {
 			System.err.println(ex);
 		}
+
 	}
 
-	
 	public void doImagingWorklistPA() {
 
 		try {
@@ -195,7 +191,7 @@ public class ImagingWorkListOPPage extends BasePage {
 
 		try {
 
-			parent6 = driver.getWindowHandle();
+			parent10 = driver.getWindowHandle();
 
 			utilobj.Window(driver);
 			utilobj.JSClick(getimgReportEntry(), driver);
@@ -242,10 +238,10 @@ public class ImagingWorkListOPPage extends BasePage {
 
 		try {
 
-			driver.switchTo().window(parent6);
+			driver.switchTo().window(parent10);
 			driver.switchTo().defaultContent();
 			getbtnSave().click();
-			// String parent8 = driver.getWindowHandle();
+			// String parent12 = driver.getWindowHandle();
 			utilobj.Window(driver);
 			utilobj.JSClick(getimgReportDispatch(), driver);
 
@@ -257,7 +253,7 @@ public class ImagingWorkListOPPage extends BasePage {
 			getbtnSaveDisplay().click();
 			getButtonOKpopup().click();
 			driver.close();
-			driver.switchTo().window(parent6);
+			driver.switchTo().window(parent10);
 			driver.switchTo().defaultContent();
 
 		}

@@ -11,7 +11,7 @@ import com.qa.pages.OPCaseSheetPage;
 import com.qa.pages.PatientCheckInPage;
 import com.qa.pages.SelectHospitalLocationPage;
 
-public class ImagingWorkListPageTest extends BaseTest {
+public class ImagingWorkListOPPageTest extends BaseTest {
 
 	LoginPage loginpage;
 	HomePage homepage;

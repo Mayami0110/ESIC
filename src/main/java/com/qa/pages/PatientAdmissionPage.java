@@ -1,5 +1,7 @@
 package com.qa.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,8 +65,8 @@ public WebElement getDdlAdmissionSrc() {
 	return getElement(ddlAdmissionSrc);
 }
 
-public WebElement getDdlUnit() {
-	return getElement(ddlUnit);
+public List<WebElement> getDdlUnit() {
+	return getElements(ddlUnit);
 }
 
 
@@ -112,8 +114,8 @@ public void doPatientAdmission(String IPnumber,String SpecialisationName,String 
 		Thread.sleep(2000);
 		utilobj.selectDropdown(getDdlAdmissionType(), driver, AdmissionType);
 		utilobj.selectDropdown(getDdlAdmissionSrc(), driver, AdmissionSrc);
-		utilobj.selectDropdown(getDdlUnit(), driver, DdlUnitName);
-		
+		//utilobj.selectDropdownValue(getDdlUnit(), driver, DdlUnitName);
+		utilobj.selectDropdownValue(getDdlUnit(), driver, DdlUnitName);
 		
 		//utilobj.JSEnterText(getDdlUnit(), driver, DdlUnitName);
 		
