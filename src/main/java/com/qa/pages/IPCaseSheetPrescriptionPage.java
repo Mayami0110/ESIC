@@ -6,20 +6,17 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.util.util;
 
-public class IPCaseSheetPage extends BasePage {
+public class IPCaseSheetPrescriptionPage extends BasePage {
 	
-	public IPCaseSheetPage(WebDriver driver) {
+	public IPCaseSheetPrescriptionPage(WebDriver driver) {
 		super(driver);
 		
 	}
 
 	util utilobj = new util();
 
-	String checkinNumber = null;
-	String lblchkin1 = "//span[text()='";
-	String lblchkin2 = "']";
-	//private By lblBillNo1 = By.linkText(checkinNumber);
-	// private By lblBillNo1 = By.xpath(lblchkin1+ checkinNumber +lblchkin2);
+	private By imgexpand = By.xpath("//*[@id=\"ctl00_cphpage_lstViewUnit_ctrl2_row\"]/th[contains(text(),'Dummyunit')]//preceding-sibling::th/img");
+	private By imgadmissionno = By.xpath("//span[contains(@id,\"lblAdmissionNumberDetail\")][(text()='IP012100011')]//parent::td//preceding-sibling::td[3]//input");
 
 	private By popok = By.id("popup_ok");
 
@@ -34,7 +31,15 @@ public class IPCaseSheetPage extends BasePage {
 
 	private By btnISaveClose = By.id("btnISaveClose"); //
 	
-	
+	public WebElement getimgexpand() {
+		return getElement(imgexpand);
+
+	}
+
+	public WebElement getimgadmissionno() {
+		return getElement(imgadmissionno);
+
+	}
 
 	public WebElement getorderpackselection() {
 		return getElement(orderpackselection);
@@ -73,16 +78,7 @@ public class IPCaseSheetPage extends BasePage {
 
 	}
 
-	public WebElement getlblBillNo1(String checkinNumber) {
-		return getElement(By.xpath(lblchkin1 + checkinNumber + lblchkin2));
-		//// span[text()='OPGENE012100026']
-	}
-
-	/*
-	 * public WebElement getlblBillNo1(String checkinNumber) { return getElement(
-	 * By.linkText(checkinNumber)); //// span[text()='OPGENE012100026'] }
-	 */
-
+	
 	
 
 	public String verifyDoctorWorklistPageTitle() {
@@ -91,18 +87,16 @@ public class IPCaseSheetPage extends BasePage {
 
 	}
 
-	public void doOpenCaseSheet(String checkinNumber) {
+	public void doOpenIPCaseSheet() {
 
 		try
 
 		{
+			//().click();
+			utilobj.JSClick(getimgexpand(), driver);
+			utilobj.JSView(getimgadmissionno(), driver);
+			utilobj.JSClick(getimgadmissionno(), driver);
 
-			getlblBillNo1(checkinNumber).click();
-			
-			// Code for testing purpose Dr Worklist. - Direct Click
-			
-		//	driver.findElement(By.id("ctl00_cphpage_gdvSpecialization_ctl02_lblBillNo1")).click();
-			
 
 		}
 
@@ -112,11 +106,13 @@ public class IPCaseSheetPage extends BasePage {
 
 	}
 	
-	public void doCasesheetprecripstion(String orderpackname) {
+	public void doIPCasesheetprecripstion(String orderpackname) {
 
 		try
 
 		{
+			Thread.sleep(5000);
+			
 			getpopok().click();
 			
 			String parent3 = driver.getWindowHandle();
@@ -154,7 +150,8 @@ public class IPCaseSheetPage extends BasePage {
 			
 			driver.switchTo().alert().accept();
 			
-			
+			getpopok().click();
+
 			
 			
 		}

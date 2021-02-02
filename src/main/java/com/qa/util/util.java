@@ -33,6 +33,23 @@ public class util {
 
 		}
 	}
+	
+	
+	public void JSView(WebElement element, WebDriver driver) {
+
+		try {
+			// element = driver.findElement(locator);
+
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+
+			js.executeScript("arguments[0].scrollIntoView(true);",element);
+
+		} catch (Exception ex) {
+			System.out.println(ex);
+
+		}
+	}
+
 
 	public void JSEnterText(WebElement element, WebDriver driver, String strData) {
 

@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 
 import com.qa.pages.HISHomePage;
 import com.qa.pages.HomePage;
+import com.qa.pages.IPCaseSheetPrescriptionPage;
+import com.qa.pages.ImagingWorkListIPPage;
 import com.qa.pages.ImagingWorkListOPPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.OPCaseSheetPage;
@@ -17,9 +19,9 @@ public class ImagingWorkListIPPageTest extends BaseTest {
 	HomePage homepage;
 	SelectHospitalLocationPage selecthospitallocationpage;
 	HISHomePage hishomepage;
-	ImagingWorkListOPPage imagingWorkListOPPage;
+	ImagingWorkListIPPage imagingWorkListIPPage;
 
-	OPCaseSheetPage opCaseSheetPage;
+	IPCaseSheetPrescriptionPage ipCaseSheetPage;
 	PatientCheckInPage patientcheckInpage;
 
 	@Test(priority = 0)
@@ -44,82 +46,66 @@ public class ImagingWorkListIPPageTest extends BaseTest {
 				prop.getProperty("imagingfacilityname"));
 	}
 
-	@Test(priority = 3)
-	public void doNavigateToPatientCheckInTest() {
-
-		patientcheckInpage = hishomepage.doNavigateToPatientCheckIn();
-	}
-
-	@Test(priority = 4)
-	public void doPatientCheckINTest() {
-
-		patientcheckInpage.doPatientCheckIN(prop.getProperty("IPNumber"), prop.getProperty("specialisationName"));
-
-	}
-
 	@Test(priority = 5)
 	public void doNavigateToDoctorWorklistTest() {
 
-		String txtcheckInNumber = patientcheckInpage.getPatientCheckinNumber();
-		opCaseSheetPage = hishomepage.doNavigateToDoctorWorklistLink();
-		// String txtcheckInNumber = "";
-		opCaseSheetPage.doOpenCaseSheet(txtcheckInNumber);
-		// doctorWorklistpage.doOpenCaseSheet(txtcheckInNumber);
+		ipCaseSheetPage = hishomepage.doNavigateToInpatientEmergencyLink();
+		ipCaseSheetPage.doOpenIPCaseSheet();
 
 	}
 
 	@Test(priority = 6)
 	public void doCasesheetprecripstionTest() {
 
-		opCaseSheetPage.doCasesheetprecripstion(prop.getProperty("orderpackname"));
+		ipCaseSheetPage.doIPCasesheetprecripstion(prop.getProperty("orderpackname"));
 
 	}
 
 	@Test(priority = 7)
 	public void doNavigateToImagingWorklistLinkTest() {
 
-		imagingWorkListOPPage = hishomepage.doNavigateToImagingWorklistLink();
+		imagingWorkListIPPage = hishomepage.doNavigateToImagingWorklistIPLink();
 	}
 
 	@Test(priority = 8)
-	public void doImagingWorklistOPFlowTest() {
+	public void doImagingWorklistIPFlowTest() {
 
-		imagingWorkListOPPage.doImagingWorklistOPFlow(prop.getProperty("reqPageTitle"));
+		imagingWorkListIPPage.doImagingWorklistIPFlow(prop.getProperty("reqPageTitle"));
 
 	}
 
 	@Test(priority = 9)
-	public void doImagingWorklistOPFlowPATest() {
+	public void doImagingWorklistIPFlowPATest() {
 
-		imagingWorkListOPPage.doImagingWorklistPA();
+		imagingWorkListIPPage.doImagingWorklistPA();
 
 	}
 
 	@Test(priority = 10)
-	public void doImagingWorklistOPFlowTestPerfTest() {
+	public void doImagingWorklistIPFlowTestPerfTest() {
 
-		imagingWorkListOPPage.doImagingWorklistTestPerf();
+		imagingWorkListIPPage.doImagingWorklistTestPerf();
 
 	}
 
 	@Test(priority = 11)
-	public void doImagingWorklistOPFlowResultEntryTest() {
+	public void doImagingWorklistIPFlowResultEntryTest() {
 
-		imagingWorkListOPPage.doImagingWorklistResultEntry(prop.getProperty("resultText"));
+		imagingWorkListIPPage.doImagingWorklistResultEntry(prop.getProperty("resultText"));
 
 	}
 
 	@Test(priority = 12)
 	public void doImagingWorklistOPFlowResultverifyTest() {
 
-		imagingWorkListOPPage.doImagingWorklistResultverify();
+		imagingWorkListIPPage.doImagingWorklistResultverify();
 
 	}
 
 	@Test(priority = 13)
 	public void doImagingWorklistOPFlowDispatchTest() {
 
-		imagingWorkListOPPage.doImagingWorklistDispatch(prop.getProperty("dispatchname"));
+		imagingWorkListIPPage.doImagingWorklistDispatch(prop.getProperty("dispatchname"));
 
 	}
 

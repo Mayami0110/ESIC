@@ -177,12 +177,12 @@ public class HISHomePage extends BasePage {
 		return new OPCaseSheetPage(driver);
 	}
 	
-	public IPCaseSheetPage doNavigateToInpatientEmergencyLink() {
+	public IPCaseSheetPrescriptionPage doNavigateToInpatientEmergencyLink() {
 		utilobj.MoveElement(getClinicalRecordsLink(), driver);
 
 		getInpatientsEmergencyLink().click();
 
-		return new IPCaseSheetPage(driver);
+		return new IPCaseSheetPrescriptionPage(driver);
 	}
 
 	public CDRPage doNavigateToCDRLink() {
@@ -223,7 +223,7 @@ public class HISHomePage extends BasePage {
 
 		}
 
-		public ImagingWorkListOPPage doNavigateToImagingWorklistLink() {
+		public ImagingWorkListOPPage doNavigateToImagingWorklistOPLink() {
 			utilobj.MoveElement(getImagingServicesLink(), driver);
 
 			getImagingWorklistLink().click();
@@ -232,6 +232,14 @@ public class HISHomePage extends BasePage {
 
 		}
 
+		public ImagingWorkListIPPage doNavigateToImagingWorklistIPLink() {
+			utilobj.MoveElement(getImagingServicesLink(), driver);
+
+			getImagingWorklistLink().click();
+
+			return new ImagingWorkListIPPage(driver);
+
+		}
 
 		public PharmacyIssuePage doNavigateToPharmacyIssueLink() {
 		

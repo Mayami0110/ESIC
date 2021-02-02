@@ -78,7 +78,7 @@ public class ImagingWorkListOPPageTest extends BaseTest {
 	@Test(priority = 7)
 	public void doNavigateToImagingWorklistLinkTest() {
 
-		imagingWorkListOPPage = hishomepage.doNavigateToImagingWorklistLink();
+		imagingWorkListOPPage = hishomepage.doNavigateToImagingWorklistOPLink();
 	}
 
 	@Test(priority = 8)
