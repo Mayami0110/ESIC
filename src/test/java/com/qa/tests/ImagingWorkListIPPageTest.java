@@ -47,7 +47,7 @@ public class ImagingWorkListIPPageTest extends BaseTest {
 	}
 
 	@Test(priority = 5)
-	public void doNavigateToDoctorWorklistTest() {
+	public void doNavigateToInpatientEmergencyLinkTest() {
 
 		ipCaseSheetPage = hishomepage.doNavigateToInpatientEmergencyLink();
 		ipCaseSheetPage.doOpenIPCaseSheet();

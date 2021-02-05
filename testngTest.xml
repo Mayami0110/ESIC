@@ -6,7 +6,7 @@
 		<listener class-name="com.qa.util.ExtentReporterNG" />
 </listeners>
 
-  <test thread-count="5" name="Test1" parallel ="methods">
+  <test thread-count="5" name="Test1">
     <classes>
           <class name="com.qa.tests.ImagingWorkListIPPageTest"/>
           
