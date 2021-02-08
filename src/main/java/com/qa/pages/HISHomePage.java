@@ -58,9 +58,11 @@ public class HISHomePage extends BasePage {
 
 	private By PharmacyIssueLink = By.linkText("Pharmacy Issues");
 	
-	
+	private By PhysicalStockEntryLink = By.linkText("Physical Stock Entry");
 	
 
+	
+	
 	public WebElement getRegistrationLink() {
 		return getElement(RegistrationLink);
 
@@ -142,6 +144,12 @@ public class HISHomePage extends BasePage {
 		return getElement(PharmacyIssueLink);
 
 	}
+	
+	public WebElement getPhysicalStockEntryLink() {
+		return getElement(PhysicalStockEntryLink);
+
+	}
+
 
 	
 	public PatientCheckInPage doNavigateToPatientCheckIn() {
@@ -250,6 +258,18 @@ public class HISHomePage extends BasePage {
 			return new PharmacyIssuePage(driver);
 
 		}
+
+		public PhysicalStockEntryPage doNavigateToPhysicalStockEntryLink() {
+			
+			utilobj.MoveElement(getStoreLinks(), driver);
+
+			getPhysicalStockEntryLink().click();
+
+			return new PhysicalStockEntryPage(driver);
+
+		}
+
+
 
 }
 

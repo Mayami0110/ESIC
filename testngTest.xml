@@ -8,7 +8,7 @@
 
   <test thread-count="5" name="Test1">
     <classes>
-          <class name="com.qa.tests.ImagingWorkListIPPageTest"/>
+          <class name="com.qa.tests.PhysicalStockEntryTest"/>
           
     </classes>
   </test> <!-- Test -->
