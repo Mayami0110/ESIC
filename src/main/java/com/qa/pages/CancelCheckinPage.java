@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.pages.BasePage;
 import com.qa.util.util;
 
 public class CancelCheckinPage extends BasePage {
