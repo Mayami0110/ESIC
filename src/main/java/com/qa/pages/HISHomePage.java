@@ -28,13 +28,11 @@ public class HISHomePage extends BasePage {
 	private By ClinicalRecordsLink = By.linkText("Clinical Records");
 
 	private By DoctorWorklistLink = By.linkText("Doctor Worklist");
-	
+
 	private By InpatientsEmergencyLink = By.linkText("Inpatients/Emergency Patients");
 	private By UHIDcreationLink = By.linkText("UHID Creation");
-	
+
 	private By BedstatusLink = By.linkText("Bed Status");
-
-
 
 	private By CDRLink = By.linkText("CDR");
 
@@ -45,24 +43,25 @@ public class HISHomePage extends BasePage {
 	private By OTandResourceSchedulingLink = By.linkText("OT and Resource Scheduling");
 
 	private By ViewOTListLink = By.linkText("View OT List");
-	
+
 	/* Imaging module */
 
 	private By ImagingServicesLink = By.linkText("IMAGING SERVICES");
 
 	private By ImagingWorklistLink = By.linkText("Worklist");
-		
+
 	// Store
-	
+
 	private By StoreLinks = By.linkText("Stores");
 
 	private By PharmacyIssueLink = By.linkText("Pharmacy Issues");
-	
-	private By PhysicalStockEntryLink = By.linkText("Physical Stock Entry");
-	
 
-	
-	
+	private By PhysicalStockEntryLink = By.linkText("Physical Stock Entry");
+
+	private By AdjustmentsLink = By.linkText("Adjustments");
+	private By LossBreakageLink = By.linkText("Loss & Breakage");
+	private By StoreConsumptionLink = By.linkText("Store Consumption");
+
 	public WebElement getRegistrationLink() {
 		return getElement(RegistrationLink);
 
@@ -92,6 +91,7 @@ public class HISHomePage extends BasePage {
 		return getElement(DoctorWorklistLink);
 
 	}
+
 	public WebElement getInpatientsEmergencyLink() {
 		return getElement(InpatientsEmergencyLink);
 
@@ -116,21 +116,22 @@ public class HISHomePage extends BasePage {
 		return getElement(ViewOTListLink);
 
 	}
-	
-	
+
 	public WebElement getBedstatusLink() {
 		return getElement(BedstatusLink);
 
 	}
-	
+
 	public WebElement getUHIDcreationLink() {
 		return getElement(UHIDcreationLink);
 
 	}
+
 	public WebElement getImagingServicesLink() {
 		return getElement(ImagingServicesLink);
 
 	}
+
 	public WebElement getImagingWorklistLink() {
 		return getElement(ImagingWorklistLink);
 
@@ -140,18 +141,32 @@ public class HISHomePage extends BasePage {
 		return getElement(StoreLinks);
 
 	}
+
 	public WebElement getPharmacyIssueLink() {
 		return getElement(PharmacyIssueLink);
 
 	}
-	
+
 	public WebElement getPhysicalStockEntryLink() {
 		return getElement(PhysicalStockEntryLink);
 
 	}
 
+	public WebElement getAdjustmentsLink() {
+		return getElement(AdjustmentsLink);
 
-	
+	}
+
+	public WebElement getLossBreakageLink() {
+		return getElement(LossBreakageLink);
+
+	}
+
+	public WebElement getStoreConsumptionLink() {
+		return getElement(StoreConsumptionLink);
+
+	}
+
 	public PatientCheckInPage doNavigateToPatientCheckIn() {
 		utilobj.MoveElement(getRegistrationLink(), driver);
 
@@ -184,7 +199,7 @@ public class HISHomePage extends BasePage {
 
 		return new OPCaseSheetPage(driver);
 	}
-	
+
 	public IPCaseSheetPrescriptionPage doNavigateToInpatientEmergencyLink() {
 		utilobj.MoveElement(getClinicalRecordsLink(), driver);
 
@@ -202,75 +217,99 @@ public class HISHomePage extends BasePage {
 	}
 
 	public OTandResourceSchedulingPage doNavigateToOTandResourceSchedulingLink() {
-		
+
 		utilobj.MoveElement(getOTandResourceSchedulingLink(), driver);
 
 		getViewOTListLink().click();
 
 		return new OTandResourceSchedulingPage(driver);
-		
-		
+
 	}
-		
-		
-		public BedStatusPage doNavigateToBedStatusLink() {
-			utilobj.MoveElement(getRegistrationLink(), driver);
 
-			getBedstatusLink().click();
+	public BedStatusPage doNavigateToBedStatusLink() {
+		utilobj.MoveElement(getRegistrationLink(), driver);
 
-			return new BedStatusPage(driver);
+		getBedstatusLink().click();
 
-		}
-		
-		public UHIDPage doNavigateToUHIDcreationLink() {
-			utilobj.MoveElement(getRegistrationLink(), driver);
+		return new BedStatusPage(driver);
 
-			getUHIDcreationLink().click();
+	}
 
-			return new UHIDPage(driver);
+	public UHIDPage doNavigateToUHIDcreationLink() {
+		utilobj.MoveElement(getRegistrationLink(), driver);
 
-		}
+		getUHIDcreationLink().click();
 
-		public ImagingWorkListOPPage doNavigateToImagingWorklistOPLink() {
-			utilobj.MoveElement(getImagingServicesLink(), driver);
+		return new UHIDPage(driver);
 
-			getImagingWorklistLink().click();
+	}
 
-			return new ImagingWorkListOPPage(driver);
+	public ImagingWorkListOPPage doNavigateToImagingWorklistOPLink() {
+		utilobj.MoveElement(getImagingServicesLink(), driver);
 
-		}
+		getImagingWorklistLink().click();
 
-		public ImagingWorkListIPPage doNavigateToImagingWorklistIPLink() {
-			utilobj.MoveElement(getImagingServicesLink(), driver);
+		return new ImagingWorkListOPPage(driver);
 
-			getImagingWorklistLink().click();
+	}
 
-			return new ImagingWorkListIPPage(driver);
+	public ImagingWorkListIPPage doNavigateToImagingWorklistIPLink() {
+		utilobj.MoveElement(getImagingServicesLink(), driver);
 
-		}
+		getImagingWorklistLink().click();
 
-		public PharmacyIssuePage doNavigateToPharmacyIssueLink() {
-		
-			utilobj.MoveElement(getStoreLinks(), driver);
+		return new ImagingWorkListIPPage(driver);
 
-			getPharmacyIssueLink().click();
+	}
 
-			return new PharmacyIssuePage(driver);
+	public PharmacyIssuePage doNavigateToPharmacyIssueLink() {
 
-		}
+		utilobj.MoveElement(getStoreLinks(), driver);
 
-		public PhysicalStockEntryPage doNavigateToPhysicalStockEntryLink() {
-			
-			utilobj.MoveElement(getStoreLinks(), driver);
+		getPharmacyIssueLink().click();
 
-			getPhysicalStockEntryLink().click();
+		return new PharmacyIssuePage(driver);
 
-			return new PhysicalStockEntryPage(driver);
+	}
 
-		}
+	public PhysicalStockEntryPage doNavigateToPhysicalStockEntryLink() {
 
+		utilobj.MoveElement(getStoreLinks(), driver);
 
+		getPhysicalStockEntryLink().click();
+
+		return new PhysicalStockEntryPage(driver);
+
+	}
+
+	public AdjustmentLBStoreConsumptionPage doNavigateAdjustmentLink() {
+
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getAdjustmentsLink().click();
+
+		return new AdjustmentLBStoreConsumptionPage(driver);
+
+	}
+
+	public AdjustmentLBStoreConsumptionPage doNavigateLossBreakageLink() {
+
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getLossBreakageLink().click();
+
+		return new AdjustmentLBStoreConsumptionPage(driver);
+
+	}
+
+	public AdjustmentLBStoreConsumptionPage doNavigategetStoreConsumptionLink() {
+
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getStoreConsumptionLink().click();
+
+		return new AdjustmentLBStoreConsumptionPage(driver);
+
+	}
 
 }
-
-

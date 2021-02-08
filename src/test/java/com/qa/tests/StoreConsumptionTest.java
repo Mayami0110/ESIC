@@ -3,21 +3,21 @@ package com.qa.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
+import com.qa.pages.AdjustmentLBStoreConsumptionPage;
 import com.qa.pages.HISHomePage;
 import com.qa.pages.HomePage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.SelectHospitalLocationPage;
 import com.qa.pages.PhysicalStockEntryPage;
 
-public class PhysicalStockEntryTest  extends BaseTest {
+public class StoreConsumptionTest  extends BaseTest {
 
 	
 	LoginPage loginpage;
 	HomePage homepage;
 	SelectHospitalLocationPage selecthospitallocationpage;
 	HISHomePage hishomepage;
-	PhysicalStockEntryPage physicalStockEntrypage;
+	AdjustmentLBStoreConsumptionPage storeconsumptions;
 	
 	
 	@Test(priority =0)
@@ -43,16 +43,16 @@ public class PhysicalStockEntryTest  extends BaseTest {
 	
 	
 	@Test(priority = 3)
-	public void doNavigateToPhysicalStockEntryLink() {
+	public void doNavigateAdjustmentTest() {
 
-		physicalStockEntrypage = hishomepage.doNavigateToPhysicalStockEntryLink();
+		storeconsumptions = hishomepage.doNavigategetStoreConsumptionLink();
 	}
 
 			
 	@Test(priority =4)
-	public void doPhysicalStockEntryTest() {
+	public void doAdjustmentTest() {
 
-		physicalStockEntrypage.doPhysicalStockEntry(prop.getProperty("itemname"));
+		storeconsumptions.doAdjustmentLBStoreConsumption();
 		
 	}
 	

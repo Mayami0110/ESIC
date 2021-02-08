@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48614" started-at="2021-02-08T08:52:45Z" finished-at="2021-02-08T08:53:34Z">
+  <suite name="Suite" duration-ms="30285" started-at="2021-02-08T10:39:22Z" finished-at="2021-02-08T10:39:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48614" started-at="2021-02-08T08:52:45Z" finished-at="2021-02-08T08:53:34Z">
-      <class name="com.qa.tests.PhysicalStockEntryTest">
-        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="setuptest" is-config="true" duration-ms="5479" started-at="2021-02-08T08:52:45Z" finished-at="2021-02-08T08:52:51Z">
+    <test name="Test1" duration-ms="30285" started-at="2021-02-08T10:39:22Z" finished-at="2021-02-08T10:39:53Z">
+      <class name="com.qa.tests.LossBreakageTest">
+        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.LossBreakageTest@475e586c]" name="setuptest" is-config="true" duration-ms="5289" started-at="2021-02-08T10:39:22Z" finished-at="2021-02-08T10:39:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setuptest -->
-        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="doLoginTest" duration-ms="1239" started-at="2021-02-08T08:52:51Z" finished-at="2021-02-08T08:52:52Z">
+        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doLoginTest" duration-ms="5613" started-at="2021-02-08T10:39:28Z" finished-at="2021-02-08T10:39:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLoginTest -->
-        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="doNavigateToSelectHospitalLocationTest" duration-ms="25574" started-at="2021-02-08T08:52:52Z" finished-at="2021-02-08T08:53:17Z">
+        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="5772" started-at="2021-02-08T10:39:33Z" finished-at="2021-02-08T10:39:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToSelectHospitalLocationTest -->
-        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="doNavigateToHISHomeTest" duration-ms="1498" started-at="2021-02-08T08:53:17Z" finished-at="2021-02-08T08:53:19Z">
+        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="3015" started-at="2021-02-08T10:39:39Z" finished-at="2021-02-08T10:39:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToHISHomeTest -->
-        <test-method status="PASS" signature="doNavigateToPatientCheckInTest()[pri:3, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="doNavigateToPatientCheckInTest" duration-ms="1867" started-at="2021-02-08T08:53:19Z" finished-at="2021-02-08T08:53:21Z">
+        <test-method status="PASS" signature="doNavigateLossBreakageLinkTest()[pri:3, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doNavigateLossBreakageLinkTest" duration-ms="1120" started-at="2021-02-08T10:39:42Z" finished-at="2021-02-08T10:39:43Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doNavigateToPatientCheckInTest -->
-        <test-method status="PASS" signature="doPhysicalStockEntryTest()[pri:4, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="doPhysicalStockEntryTest" duration-ms="12938" started-at="2021-02-08T08:53:21Z" finished-at="2021-02-08T08:53:34Z">
+        </test-method> <!-- doNavigateLossBreakageLinkTest -->
+        <test-method status="PASS" signature="doLossAndBreakageTest()[pri:4, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doLossAndBreakageTest" duration-ms="9441" started-at="2021-02-08T10:39:43Z" finished-at="2021-02-08T10:39:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doPhysicalStockEntryTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.PhysicalStockEntryTest@6295d394]" name="teardown" is-config="true" duration-ms="0" started-at="2021-02-08T08:53:34Z" finished-at="2021-02-08T08:53:34Z">
+        </test-method> <!-- doLossAndBreakageTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.LossBreakageTest@475e586c]" name="teardown" is-config="true" duration-ms="0" started-at="2021-02-08T10:39:53Z" finished-at="2021-02-08T10:39:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.qa.tests.PhysicalStockEntryTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.qa.tests.LossBreakageTest -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Suite -->
 </testng-results>

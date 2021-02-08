@@ -6,12 +6,16 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.util.util;
 
-public class Adjustment extends BasePage {
+public class AdjustmentLBStoreConsumptionPage extends BasePage {
+	
+	public AdjustmentLBStoreConsumptionPage(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 	util utilobj = new util();
 
-	public Adjustment(WebDriver driver) {
-		super(driver);
-	}
+	
 
 	private By imgbtnMultiItemSearch = By.id("ctl00_cphpage_grdItemgrid_ctl01_imgbtnMultiItemSearch");
 	private By txtCriteria = By.id("ctl00_cphpage_hisDataSearchCtrl_hisSearchCriteria_dlData_ctl00_txtCriteria");
@@ -71,7 +75,7 @@ public class Adjustment extends BasePage {
 		return getElement(ButtonOK);
 	}
 	
-	public void doPhysicalStockEntry(String itemnames) {
+	public void doAdjustmentLBStoreConsumption() {
 
 		try {
 			
