@@ -9,7 +9,7 @@ import com.qa.pages.LoginPage;
 import com.qa.pages.PatientCheckInPage;
 import com.qa.pages.SelectHospitalLocationPage;
 
-public class PatientCheckInTest  extends BaseTest{
+public class PatientCheckInTest  extends BaseTest {
 
 	
 	LoginPage loginpage;

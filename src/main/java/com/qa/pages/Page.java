@@ -16,6 +16,9 @@ public abstract class Page {
 	
 	public abstract WebElement getElement(By locator);
 	
+	public abstract WebElement getElement(By locator, String elementdata);
+
+	
 	public abstract void waitForElement(By locator);
  
 	

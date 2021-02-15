@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="54428" started-at="2020-12-13T14:50:17Z" finished-at="2020-12-13T14:51:11Z">
+  <suite name="Suite" duration-ms="53450" started-at="2021-02-10T10:36:40Z" finished-at="2021-02-10T10:37:33Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="54428" started-at="2020-12-13T14:50:17Z" finished-at="2020-12-13T14:51:11Z">
-      <class name="com.qa.tests.PatientCheckInTest">
-        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="setuptest" is-config="true" duration-ms="12621" started-at="2020-12-13T14:50:17Z" finished-at="2020-12-13T14:50:29Z">
+    <test name="Test1" duration-ms="53450" started-at="2021-02-10T10:36:40Z" finished-at="2021-02-10T10:37:33Z">
+      <class name="com.qa.tests.IndentOrderTest">
+        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.IndentOrderTest@475e586c]" name="setuptest" is-config="true" duration-ms="4020" started-at="2021-02-10T10:36:40Z" finished-at="2021-02-10T10:36:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setuptest -->
-        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doLoginTest" duration-ms="193" started-at="2020-12-13T14:50:29Z" finished-at="2020-12-13T14:50:30Z">
+        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doLoginTest" duration-ms="1220" started-at="2021-02-10T10:36:44Z" finished-at="2021-02-10T10:36:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLoginTest -->
-        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="3692" started-at="2020-12-13T14:50:30Z" finished-at="2020-12-13T14:50:33Z">
+        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="42703" started-at="2021-02-10T10:36:45Z" finished-at="2021-02-10T10:37:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToSelectHospitalLocationTest -->
-        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="4623" started-at="2020-12-13T14:50:33Z" finished-at="2020-12-13T14:50:38Z">
+        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="1225" started-at="2021-02-10T10:37:28Z" finished-at="2021-02-10T10:37:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToHISHomeTest -->
-        <test-method status="PASS" signature="doNavigateToPatientCheckInTest()[pri:3, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doNavigateToPatientCheckInTest" duration-ms="1618" started-at="2020-12-13T14:50:38Z" finished-at="2020-12-13T14:50:40Z">
+        <test-method status="PASS" signature="doNavigateIndentOrderLinkTest()[pri:3, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doNavigateIndentOrderLinkTest" duration-ms="871" started-at="2021-02-10T10:37:29Z" finished-at="2021-02-10T10:37:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doNavigateToPatientCheckInTest -->
-        <test-method status="PASS" signature="verifyPatientCheckInPageTitleTest()[pri:4, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="verifyPatientCheckInPageTitleTest" duration-ms="17" started-at="2020-12-13T14:50:40Z" finished-at="2020-12-13T14:50:40Z">
+        </test-method> <!-- doNavigateIndentOrderLinkTest -->
+        <test-method status="PASS" signature="doIndentOrderTest()[pri:4, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doIndentOrderTest" duration-ms="3392" started-at="2021-02-10T10:37:30Z" finished-at="2021-02-10T10:37:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPatientCheckInPageTitleTest -->
-        <test-method status="PASS" signature="doPatientCheckINTest()[pri:5, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="doPatientCheckINTest" duration-ms="31646" started-at="2020-12-13T14:50:40Z" finished-at="2020-12-13T14:51:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- doPatientCheckINTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.PatientCheckInTest@475e586c]" name="teardown" is-config="true" duration-ms="1" started-at="2020-12-13T14:51:11Z" finished-at="2020-12-13T14:51:11Z">
+        </test-method> <!-- doIndentOrderTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.IndentOrderTest@475e586c]" name="teardown" is-config="true" duration-ms="0" started-at="2021-02-10T10:37:33Z" finished-at="2021-02-10T10:37:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.qa.tests.PatientCheckInTest -->
-    </test> <!-- Test -->
+      </class> <!-- com.qa.tests.IndentOrderTest -->
+    </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>
