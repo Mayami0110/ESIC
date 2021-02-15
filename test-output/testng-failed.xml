@@ -4,21 +4,18 @@
   <listeners>
     <listener class-name="com.qa.util.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="Test1(failed)" parallel="methods">
+  <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="com.qa.tests.ImagingWorkListIPPageTest">
+      <class name="com.qa.tests.IndentOrderTest">
         <methods>
-          <include name="doImagingWorklistIPFlowResultEntryTest"/>
-          <include name="doNavigateToImagingWorklistLinkTest"/>
-          <include name="doImagingWorklistOPFlowResultverifyTest"/>
-          <include name="doImagingWorklistOPFlowDispatchTest"/>
-          <include name="doImagingWorklistIPFlowTest"/>
-          <include name="doImagingWorklistIPFlowPATest"/>
+          <include name="doNavigateToHISHomeTest"/>
+          <include name="doIndentOrderTest"/>
+          <include name="doNavigateToSelectHospitalLocationTest"/>
+          <include name="doNavigateIndentOrderLinkTest"/>
           <include name="teardown"/>
           <include name="setuptest"/>
-          <include name="doImagingWorklistIPFlowTestPerfTest"/>
         </methods>
-      </class> <!-- com.qa.tests.ImagingWorkListIPPageTest -->
+      </class> <!-- com.qa.tests.IndentOrderTest -->
     </classes>
   </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

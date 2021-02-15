@@ -18,8 +18,9 @@ public class IPCaseSheetPrescriptionPage extends BasePage {
 	private By imgexpand = By.xpath(
 			"//*[@id=\"ctl00_cphpage_lstViewUnit_ctrl2_row\"]/th[contains(text(),'Dummyunit')]//preceding-sibling::th/img");
 	private By imgadmissionno = By.xpath(
-			"//span[contains(@id,\"lblAdmissionNumberDetail\")][(text()='IP012100011')]//parent::td//preceding-sibling::td[3]//input");
+			"	//span[contains(@id,\"lblUHID\")][text()='DL01.0005337472']//parent::td//preceding-sibling::td[4]/input");
 
+	
 	private By popok = By.id("popup_ok");
 
 	private By lableprecripstionlink = By.id("ctl00_cphpage_trvSectionst11");

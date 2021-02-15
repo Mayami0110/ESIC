@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="30285" started-at="2021-02-08T10:39:22Z" finished-at="2021-02-08T10:39:53Z">
+  <suite name="Suite" duration-ms="53450" started-at="2021-02-10T10:36:40Z" finished-at="2021-02-10T10:37:33Z">
     <groups>
     </groups>
-    <test name="Test1" duration-ms="30285" started-at="2021-02-08T10:39:22Z" finished-at="2021-02-08T10:39:53Z">
-      <class name="com.qa.tests.LossBreakageTest">
-        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.LossBreakageTest@475e586c]" name="setuptest" is-config="true" duration-ms="5289" started-at="2021-02-08T10:39:22Z" finished-at="2021-02-08T10:39:28Z">
+    <test name="Test1" duration-ms="53450" started-at="2021-02-10T10:36:40Z" finished-at="2021-02-10T10:37:33Z">
+      <class name="com.qa.tests.IndentOrderTest">
+        <test-method status="PASS" signature="setuptest()[pri:0, instance:com.qa.tests.IndentOrderTest@475e586c]" name="setuptest" is-config="true" duration-ms="4020" started-at="2021-02-10T10:36:40Z" finished-at="2021-02-10T10:36:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setuptest -->
-        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doLoginTest" duration-ms="5613" started-at="2021-02-08T10:39:28Z" finished-at="2021-02-08T10:39:33Z">
+        <test-method status="PASS" signature="doLoginTest()[pri:0, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doLoginTest" duration-ms="1220" started-at="2021-02-10T10:36:44Z" finished-at="2021-02-10T10:36:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLoginTest -->
-        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="5772" started-at="2021-02-08T10:39:33Z" finished-at="2021-02-08T10:39:39Z">
+        <test-method status="PASS" signature="doNavigateToSelectHospitalLocationTest()[pri:1, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doNavigateToSelectHospitalLocationTest" duration-ms="42703" started-at="2021-02-10T10:36:45Z" finished-at="2021-02-10T10:37:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToSelectHospitalLocationTest -->
-        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="3015" started-at="2021-02-08T10:39:39Z" finished-at="2021-02-08T10:39:42Z">
+        <test-method status="PASS" signature="doNavigateToHISHomeTest()[pri:2, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doNavigateToHISHomeTest" duration-ms="1225" started-at="2021-02-10T10:37:28Z" finished-at="2021-02-10T10:37:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doNavigateToHISHomeTest -->
-        <test-method status="PASS" signature="doNavigateLossBreakageLinkTest()[pri:3, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doNavigateLossBreakageLinkTest" duration-ms="1120" started-at="2021-02-08T10:39:42Z" finished-at="2021-02-08T10:39:43Z">
+        <test-method status="PASS" signature="doNavigateIndentOrderLinkTest()[pri:3, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doNavigateIndentOrderLinkTest" duration-ms="871" started-at="2021-02-10T10:37:29Z" finished-at="2021-02-10T10:37:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doNavigateLossBreakageLinkTest -->
-        <test-method status="PASS" signature="doLossAndBreakageTest()[pri:4, instance:com.qa.tests.LossBreakageTest@475e586c]" name="doLossAndBreakageTest" duration-ms="9441" started-at="2021-02-08T10:39:43Z" finished-at="2021-02-08T10:39:53Z">
+        </test-method> <!-- doNavigateIndentOrderLinkTest -->
+        <test-method status="PASS" signature="doIndentOrderTest()[pri:4, instance:com.qa.tests.IndentOrderTest@475e586c]" name="doIndentOrderTest" duration-ms="3392" started-at="2021-02-10T10:37:30Z" finished-at="2021-02-10T10:37:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doLossAndBreakageTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.LossBreakageTest@475e586c]" name="teardown" is-config="true" duration-ms="0" started-at="2021-02-08T10:39:53Z" finished-at="2021-02-08T10:39:53Z">
+        </test-method> <!-- doIndentOrderTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.tests.IndentOrderTest@475e586c]" name="teardown" is-config="true" duration-ms="0" started-at="2021-02-10T10:37:33Z" finished-at="2021-02-10T10:37:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.qa.tests.LossBreakageTest -->
+      </class> <!-- com.qa.tests.IndentOrderTest -->
     </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>

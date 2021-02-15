@@ -60,8 +60,16 @@ public class HISHomePage extends BasePage {
 
 	private By AdjustmentsLink = By.linkText("Adjustments");
 	private By LossBreakageLink = By.linkText("Loss & Breakage");
-	private By StoreConsumptionLink = By.linkText("Store Consumption");
+	private By StoreConsumptionLink = By.linkText("Store Consumption"); 
 
+	private By IndentOrderLink = By.linkText("Indent Raise"); 
+	
+	public WebElement getIndentOrderLink() {
+		return getElement(IndentOrderLink);
+
+	}
+
+	
 	public WebElement getRegistrationLink() {
 		return getElement(RegistrationLink);
 
@@ -301,14 +309,24 @@ public class HISHomePage extends BasePage {
 		return new AdjustmentLBStoreConsumptionPage(driver);
 
 	}
-
-	public AdjustmentLBStoreConsumptionPage doNavigategetStoreConsumptionLink() {
+	
+	public AdjustmentLBStoreConsumptionPage doNavigateStoreConsumptionLink() {
 
 		utilobj.MoveElement(getStoreLinks(), driver);
 
 		getStoreConsumptionLink().click();
 
 		return new AdjustmentLBStoreConsumptionPage(driver);
+
+	}
+
+	public IndentOrderPage doNavigateIndentOrderLink() {
+
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getIndentOrderLink().click();
+
+		return new IndentOrderPage(driver);
 
 	}
 

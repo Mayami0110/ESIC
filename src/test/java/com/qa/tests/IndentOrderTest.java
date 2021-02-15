@@ -6,18 +6,19 @@ import org.testng.annotations.Test;
 import com.qa.pages.AdjustmentLBStoreConsumptionPage;
 import com.qa.pages.HISHomePage;
 import com.qa.pages.HomePage;
+import com.qa.pages.IndentOrderPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.SelectHospitalLocationPage;
 import com.qa.pages.PhysicalStockEntryPage;
 
-public class StoreConsumptionTest  extends BaseTest {
+public class IndentOrderTest  extends BaseTest {
 
 	
 	LoginPage loginpage;
 	HomePage homepage;
 	SelectHospitalLocationPage selecthospitallocationpage;
 	HISHomePage hishomepage;
-	AdjustmentLBStoreConsumptionPage storeconsumptions;
+	IndentOrderPage indentorderPage;
 	
 	
 	@Test(priority =0)
@@ -43,16 +44,16 @@ public class StoreConsumptionTest  extends BaseTest {
 	
 	
 	@Test(priority = 3)
-	public void doNavigateAdjustmentTest() {
+	public void doNavigateIndentOrderLinkTest() {
 
-		storeconsumptions = hishomepage.doNavigateStoreConsumptionLink();
+		indentorderPage = hishomepage.doNavigateIndentOrderLink();
 	}
 
 			
 	@Test(priority =4)
-	public void doAdjustmentTest() {
+	public void doIndentOrderTest() {
 
-		storeconsumptions.doAdjustmentLBStoreConsumption();
+		indentorderPage.doIndentOrder();
 		
 	}
 	
