@@ -6,12 +6,14 @@ import org.testng.annotations.Test;
 import com.qa.pages.AdjustmentLBStoreConsumptionPage;
 import com.qa.pages.HISHomePage;
 import com.qa.pages.HomePage;
+import com.qa.pages.IndentIssueWithoutOrderPage;
 import com.qa.pages.IndentOrderPage;
+import com.qa.pages.IndentWorkListPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.SelectHospitalLocationPage;
 import com.qa.pages.PhysicalStockEntryPage;
 
-public class IndentOrderTest  extends BaseTest {
+public class IndentIssueWithoutOrderPageTest  extends BaseTest {
 
 	
 	LoginPage loginpage;
@@ -19,7 +21,7 @@ public class IndentOrderTest  extends BaseTest {
 	SelectHospitalLocationPage selecthospitallocationpage;
 	HISHomePage hishomepage;
 	IndentOrderPage indentorderPage;
-	
+	IndentIssueWithoutOrderPage indentissueWithoutOrderPage;
 	
 	@Test(priority =0)
 	public void doLoginTest() {
@@ -44,17 +46,16 @@ public class IndentOrderTest  extends BaseTest {
 	
 	
 	@Test(priority = 3)
-	public void doNavigateIndentOrderLinkTest() {
+	public void doNavigateIndentIssuesWOOrderLinkTest() {
 
-		indentorderPage = hishomepage.doNavigateIndentOrderLink();
+		indentissueWithoutOrderPage = hishomepage.doNavigateIndentIssuesWOOrderLink();
 			}
 
 			
 	@Test(priority =4)
-	public void doIndentOrderTest() {
+	public void doIndentIssueWoOrderTest() {
 
-		indentorderPage.doIndentOrderLast5Indent();
-		indentorderPage.getIndentNumber();
+		indentissueWithoutOrderPage.doIndentIssueWoOrder();
 		
 	}
 	

@@ -7,11 +7,12 @@ import com.qa.pages.AdjustmentLBStoreConsumptionPage;
 import com.qa.pages.HISHomePage;
 import com.qa.pages.HomePage;
 import com.qa.pages.IndentOrderPage;
+import com.qa.pages.IndentWorkListPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.SelectHospitalLocationPage;
 import com.qa.pages.PhysicalStockEntryPage;
 
-public class IndentOrderTest  extends BaseTest {
+public class IndentWorklistPageTest  extends BaseTest {
 
 	
 	LoginPage loginpage;
@@ -19,6 +20,8 @@ public class IndentOrderTest  extends BaseTest {
 	SelectHospitalLocationPage selecthospitallocationpage;
 	HISHomePage hishomepage;
 	IndentOrderPage indentorderPage;
+	IndentWorkListPage indentworkListPage;
+	String indentnumber;
 	
 	
 	@Test(priority =0)
@@ -54,10 +57,37 @@ public class IndentOrderTest  extends BaseTest {
 	public void doIndentOrderTest() {
 
 		indentorderPage.doIndentOrderLast5Indent();
-		indentorderPage.getIndentNumber();
 		
 	}
 	
+	@Test(priority =5)
+	public void doIndentWorklistViewIndentApproveFromStoreTest() {
+
+		indentnumber = indentorderPage.getIndentNumber();
+		indentworkListPage = hishomepage.doNavigateIndentWorkListLink();
+		indentworkListPage.doIndentWorklistViewIndentApproveFromStore(indentnumber);
+		indentworkListPage.changeLocationFacility(driver);
+		//indentworkListPage.doIndentWorklistViewIndent("");
+
+	}
+	
+	@Test(priority =6)
+	public void doIndentWorklistViewIndentApproveToStoreTest() {
+
+		selecthospitallocationpage.doNavigateToHISHome(prop.getProperty("locationName"), prop.getProperty("storefacilitytostore"));
+		hishomepage.doNavigateIndentWorkListLink();
+		indentworkListPage.doIndentWorklistViewIndentApproveToStore();
+
+
+	}
+	@Test(priority =7)
+	public void doIndentWorklistIssueIndentToStoreTest() {
+
+		indentworkListPage.doIndentWorklistIssueIndentToStore();
+
+
+	}
+
 	
 	
 }

@@ -64,6 +64,30 @@ public class HISHomePage extends BasePage {
 
 	private By IndentOrderLink = By.linkText("Indent Raise"); 
 	
+	private By IndentWorklistLink = By.linkText("Indent Work list");  
+
+	private By IndentIssuesWOOrderLink = By.linkText("Indent Issues WO Order");  
+
+	private By AlterMRPLink = By.linkText("Alter MRP");  
+
+	public WebElement getAlterMRPLink() {
+		return getElement(AlterMRPLink);
+
+	}
+	
+	
+	public WebElement getIndentIssuesWOOrderLink() {
+		return getElement(IndentIssuesWOOrderLink);
+
+	}
+	
+	
+	public WebElement getIndentWorklistLink() {
+		return getElement(IndentWorklistLink);
+
+	}
+	
+	
 	public WebElement getIndentOrderLink() {
 		return getElement(IndentOrderLink);
 
@@ -319,7 +343,7 @@ public class HISHomePage extends BasePage {
 		return new AdjustmentLBStoreConsumptionPage(driver);
 
 	}
-
+	
 	public IndentOrderPage doNavigateIndentOrderLink() {
 
 		utilobj.MoveElement(getStoreLinks(), driver);
@@ -329,5 +353,36 @@ public class HISHomePage extends BasePage {
 		return new IndentOrderPage(driver);
 
 	}
+	
+	public IndentIssueWithoutOrderPage  doNavigateIndentIssuesWOOrderLink () {
 
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getIndentIssuesWOOrderLink().click();
+
+		return new IndentIssueWithoutOrderPage(driver);
+
+	}
+
+	public IndentWorkListPage doNavigateIndentWorkListLink() {
+
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getIndentWorklistLink().click();
+
+		return new IndentWorkListPage(driver);
+
+	}
+
+	public AlterMRPPage doNavigateAlterMRPLink() {
+
+		utilobj.MoveElement(getStoreLinks(), driver);
+
+		getAlterMRPLink().click();
+
+		return new AlterMRPPage(driver);
+
+	}
+	
+	
 }

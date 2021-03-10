@@ -6,37 +6,42 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.util.util;
 
-public class IndentOrderPage extends BasePage {
+public class IndentIssueWithoutOrderPage extends BasePage {
 
 	util utilobj = new util();
 
-	public IndentOrderPage(WebDriver driver) {
+	public IndentIssueWithoutOrderPage(WebDriver driver) {
 		super(driver);
 	}
 
 	String IndentNo="";
 	
-	private By imgSearch = By.id("ctl00_cphpage_imgSearch");
+	private By imgSearch = By.id("ctl00_cphpage_imgIssueToSearch");
 
-	private By txtCriteria = By.id("ctl00_cphpage_HISDataSearchCtrl_hisSearchCriteria_dlData_ctl00_txtCriteria");
+	private By txtCriteria = By.id("ctl00_cphpage_hisDataSearchCtrl_hisSearchCriteria_dlData_ctl00_txtCriteria");
 
-	private By btnSearch = By.id("ctl00_cphpage_HISDataSearchCtrl_hisSearchCriteria_btnSearch");
+	private By btnSearch = By.id("ctl00_cphpage_hisDataSearchCtrl_hisSearchCriteria_btnSearch");
 
 	private By rdbTemp = By.xpath("//*[text()='Store D']//preceding-sibling::td/input");
 
-	private By btnSelect = By.id("ctl00_cphpage_HISDataSearchCtrl_btnSelect");
+	private By btnSelect = By.id("ctl00_cphpage_hisDataSearchCtrl_btnSelect");
 
-	private By imgbtnSearchItem1 = By.id("ctl00_cphpage_grdIndentIssues_ctl02_imgbtnSearchItem");
+	private By imgbtnSearchItem1 = By.id("ctl00_cphpage_gdvIndentIssueItems_ctl01_imgbtnMultiItemSearch");
 
 	private By txtName = By.id("txtName");
 
 	private By ChkSelect0 = By.id("ChkSelect0");
 
 	private By itembtnSearch = By.id("btnSearch");
-	private By btnSelectItem = By.xpath("//input[@id='btnSelect']");
-	private By ReqQty = By.id("ctl00_cphpage_grdIndentIssues_ctl02_ReqQty");
+	
+	//private By btnSelectItem = By.xpath("//input[@id='btnSelect']");
 
-	private By btnSaveDisplay = By.id("ctl00_cphpage_btnSaveDisplay");
+	private By btnSelectItem = By.id("btnSelect");
+
+	
+	private By txtIssueQty = By.id("ctl00_cphpage_gdvIndentIssueItems_ctl02_txtIssueQty");
+
+	private By btnSaveDisplay = By.id("ctl00_cphpage_btnSaveIssueWOdisplay");
 
 	private By btnLast5Indent = By.id("btnSearch");
 
@@ -65,12 +70,12 @@ public class IndentOrderPage extends BasePage {
 
 	}
 
-	public WebElement getReqQty() {
-		return getElement(ReqQty);
+	public WebElement gettxtIssueQty() {
+		return getElement(txtIssueQty);
 
 	}
 
-	public WebElement getChkSelect0() {
+	public WebElement getChkSelectItem() {
 		return getElement(ChkSelect0);
 
 	}
@@ -120,7 +125,7 @@ public class IndentOrderPage extends BasePage {
 
 	}
 
-	public void doIndentOrder() {
+	public void doIndentIssueWoOrder() {
 
 		try {
 
@@ -132,75 +137,47 @@ public class IndentOrderPage extends BasePage {
 			getbtnSelect().click();
 			Thread.sleep(2000);
 
-			String currenthandle = driver.getWindowHandle();
+			String currentwinhandle = driver.getWindowHandle();
 
 			utilobj.Window(driver);
-
+			waitForElementExp(getimgbtnSearchItem1());
 			utilobj.JSClick(getimgbtnSearchItem1(), driver);
-
+			//utilobj.ChildWindowSwitch(driver, gettxtName());
 			utilobj.ChildWindow(driver);
 
-			gettxtName().sendKeys("Paracetamol Tab");
+			gettxtName().sendKeys("Paracetamol");
 			getitembtnSearch().click();
 			Thread.sleep(2000);
 
-			getChkSelect0().click();
+			driver.findElement(By.id("ChkSelect1")).click();
+			getChkSelectItem().click();
 			Thread.sleep(2000);
 
 			getbtnSelectItem().click();
-
-			driver.switchTo().window(currenthandle);
 
 			Thread.sleep(6000);
-
-			getReqQty().sendKeys("1");
-
-			getbtnSaveDisplay().click();
-
-		}
-
-		catch (Exception ex) {
-			System.err.println(ex);
-		}
-
-	}
-
-	public void doIndentOrderLast5Indent() {
-
-		try {
-
-			getimgSearch().click();
-			gettxtCriteria().sendKeys("Store D");
-			getbtnSearch().click();
-			Thread.sleep(2000);
-			getrdbTemp().click();
-			getbtnSelect().click();
-			Thread.sleep(2000);
-
-			getbtnLast5Indent().click();
-
-			getChkSelect0().click();
-			Thread.sleep(2000);
-			getbtnSelectItem().click();
-
-			Thread.sleep(2000);
-			getReqQty().clear();
-
-			getReqQty().sendKeys("1");
-
-			getbtnSaveDisplay().click();
-			Thread.sleep(2000);
-
-			getpopupok().click();
-
-		}
-
-		catch (Exception ex) {
-			System.err.println(ex);
-		}
-
-	}
+			
 	
+			driver.switchTo().window(currentwinhandle);
+			driver.switchTo().defaultContent();
+
+			Thread.sleep(2000);
+			
+			gettxtIssueQty().clear();
+
+			gettxtIssueQty().sendKeys("1");
+
+			getbtnSaveDisplay().click();
+
+		}
+
+		catch (Exception ex) {
+			System.err.println(ex);
+		}
+
+	}
+
+		
 	
 	public String getIndentNumber() {
 

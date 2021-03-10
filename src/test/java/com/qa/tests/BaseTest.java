@@ -8,6 +8,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -58,12 +59,9 @@ public class BaseTest {
 
 			ChromeOptions opt = new ChromeOptions();
 			
-			opt.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-
+			opt.addArguments("start-maximized");
 			
-	//l		opt.addArguments("window-size=1400,800");
-
-		//	opt.addArguments("--headless");
+			opt.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
 
 			WebDriverManager.chromedriver().version("2.40").setup();
 
@@ -73,14 +71,17 @@ public class BaseTest {
 			 * ChromeDriver();
 			 */
 		} else if (prop.getProperty("browser").equals("ff")) {
-
-			//WebDriverManager.firefoxdriver().setup();
+						
+					
+			WebDriverManager.firefoxdriver().setup();
+			
+			
 			
 			/*String myproxy = "10.10.17.25:3128";
 			DesiredCapabilities caps = new DesiredCapabilities();
 			caps.setCapability(CapabilityType.PROXY, new Proxy().setHttpProxy(myproxy));
-			driver = new FirefoxDriver(caps);*/
-			
+			driver = new FirefoxDriver(caps);
+			*/
 			driver = new FirefoxDriver();
 			
 			
@@ -98,7 +99,8 @@ public class BaseTest {
 		page = new BasePage(driver);
 
 	}
-
+	
+	
 	@AfterClass()
 	public void teardown() {
 		//driver.quit();

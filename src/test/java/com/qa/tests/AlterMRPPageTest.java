@@ -4,21 +4,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.qa.pages.AdjustmentLBStoreConsumptionPage;
+import com.qa.pages.AlterMRPPage;
 import com.qa.pages.HISHomePage;
 import com.qa.pages.HomePage;
-import com.qa.pages.IndentOrderPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.SelectHospitalLocationPage;
 import com.qa.pages.PhysicalStockEntryPage;
 
-public class IndentOrderTest  extends BaseTest {
+public class AlterMRPPageTest  extends BaseTest {
 
 	
 	LoginPage loginpage;
 	HomePage homepage;
 	SelectHospitalLocationPage selecthospitallocationpage;
 	HISHomePage hishomepage;
-	IndentOrderPage indentorderPage;
+	AlterMRPPage alterMRPPage;
 	
 	
 	@Test(priority =0)
@@ -44,17 +44,16 @@ public class IndentOrderTest  extends BaseTest {
 	
 	
 	@Test(priority = 3)
-	public void doNavigateIndentOrderLinkTest() {
+	public void doNavigateAdjustmentLinkTest() {
 
-		indentorderPage = hishomepage.doNavigateIndentOrderLink();
-			}
+		alterMRPPage = hishomepage.doNavigateAlterMRPLink();
+	}
 
 			
 	@Test(priority =4)
-	public void doIndentOrderTest() {
+	public void doAlterMRPTest() {
 
-		indentorderPage.doIndentOrderLast5Indent();
-		indentorderPage.getIndentNumber();
+		alterMRPPage.doAlterMRP();
 		
 	}
 	

@@ -196,6 +196,44 @@ public class util {
 
 		}
 	}
+	
+	public void ChildWindowSwitch(WebDriver driver, By locators) {
+		try {
+			String subWindowHandler = null;
+			String paWindow = driver.getWindowHandle();
+			Set<String> handles = driver.getWindowHandles();
+			System.out.println(handles.size());
+
+			Iterator<String> iterator = handles.iterator();
+
+			while (iterator.hasNext()) {
+				subWindowHandler = iterator.next();
+				if(!paWindow.equals(subWindowHandler)) {
+				driver.switchTo().window(subWindowHandler);
+				System.out.println(driver.getTitle());
+				
+				int elecount = driver.findElements(locators).size();
+				if(elecount==1) {
+					break;
+				}
+				
+				else {
+					continue;
+				}
+				
+				}
+
+			}
+
+			System.out.println(driver.getTitle());
+		} catch (Exception e) {
+			System.out.println("Winow not handled");
+
+			// logger("Steps","Window", e);
+
+		}
+	}
+
 
 	public String GetCheckinNumberText(WebElement strElement, WebDriver driver) {
 		String strtext = (strElement.getText());
@@ -273,7 +311,7 @@ public class util {
 	 * 
 	 * } }
 	 */
-
+	
 	public void waitForalert(WebDriver driver) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -282,6 +320,19 @@ public class util {
 
 		catch (Exception e) {
 			System.out.println("Not Able to Find Element");
+
+
+		}
+	}
+	public void changeLocationFacility(WebDriver driver) {
+		try {
+			
+			driver.findElement(By.id("ctl00_lnkbtnChangeHospital")).click();
+			
+		}
+
+		catch (Exception e) {
+			System.out.println("Not Able to click");
 
 			// logger("Steps","waitForElement", e);
 

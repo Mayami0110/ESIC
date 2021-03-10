@@ -1,6 +1,9 @@
 package com.qa.pages;
 
+import java.io.FileNotFoundException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -95,6 +98,10 @@ public class CancelCheckinPage extends BasePage {
 
 		}
 
+		catch (ArithmeticException | NoSuchElementException fno) {
+			System.err.println(fno);
+		}
+		
 		catch (Exception ex) {
 			System.err.println(ex);
 		}

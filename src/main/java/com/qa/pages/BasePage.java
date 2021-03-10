@@ -121,5 +121,22 @@ public class BasePage extends Page {
 		}
 
 	}
+	
+	public void waitForElementExp(WebElement element) {
+		try {
+			// WebElement element = null;
+
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		}
+
+		catch (Exception e) {
+			System.out.println("Not Able to Find Element" + element);
+
+			// logger("Steps","waitForElement", e);
+
+		}
+
+	}
 
 }
